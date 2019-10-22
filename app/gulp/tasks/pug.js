@@ -11,7 +11,7 @@ module.exports = function () {
             .pipe($.plugins.htmlmin({
                 collapseWhitespace: true
             }))
-            .pipe($.gulp.dest('./app/dist')); // .on('change', $.bs.reload);
+            .pipe($.gulp.dest('./app/dist')).on('change', $.bs.reload);
     });
     $.gulp.task('html', $.gulp.series('pug', 'html-min'));
-};
+}; 

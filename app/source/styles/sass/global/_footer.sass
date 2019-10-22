@@ -1,0 +1,56 @@
+.footer 
+    margin-bottom: 100px
+    
+.footer__attention 
+    padding-bottom: $indent-size
+    margin-bottom: $indent-size
+    font-size: $fs-subheading
+    text-align: right
+    border-bottom: 1px solid $color-gray
+    @include color-scheme(light)
+        color: $color-gray
+
+.connection
+    @include flexbox
+
+.connection__item
+    flex-grow: 1
+    ul
+        @include flexbox
+        list-style-type: none
+
+.connection__item:last-child,
+.connection__item:nth-last-of-type(2)
+    text-align: right
+    ul
+        justify-content: flex-end
+
+.connection__item:nth-last-of-type(2)
+    .connection__link
+        margin-left: 20px
+
+.connection__heading
+    margin-bottom: $indent-size / 3
+    font-size: $fs-regular
+    font-weight: 300
+    color: $color-gray
+    @include color-scheme(light)
+        color: $color-gray
+
+.connection__link
+    display: block
+    font-size: $fs-subheading
+    font-weight: 300
+    text-decoration: none
+
+.follow-dot
+    font-weight: bold
+    &--vk
+        color: $color-vk
+    &--ig
+        color: $color-ig
+    &--tg
+        color: $color-tg
+    &--in
+        color: $color-in
+    

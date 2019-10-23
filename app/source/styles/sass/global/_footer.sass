@@ -3,6 +3,7 @@
     
 // Призыв к сотрудничеству, первый параграф 
 .footer__attention 
+    padding-top: $indent-size
     padding-bottom: $indent-size
     margin-bottom: $indent-size + 5px
     font-size: $fs-subheading
@@ -59,6 +60,9 @@
     text-decoration: none
     @include color-scheme(light)
         font-weight: normal
+
+.connection__tag
+    position: relative
     &::before
         @include pseudo
         top: 50%
@@ -70,10 +74,6 @@
         height: $fs-subheading + .5rem
         transform: translateY(-50%)
         transition: all .3s ease
-    &:hover::before
-        visibility: visible
-        opacity: 1
-        transform: translateY(-50%) translateX(40px)
     &--connect
         &::before
             background: url('../images/telegram-for-dark.svg') left no-repeat, $color-dark
@@ -88,6 +88,11 @@
             @include color-scheme(light)
                 background: url('../images/github.svg') left no-repeat, $color-light
                 background-size: contain
+
+.connection__link:hover .connection__tag::before
+    visibility: visible
+    opacity: 1
+    transform: translateY(-50%) translateX(40px)
 
 .socials__link
     display: block

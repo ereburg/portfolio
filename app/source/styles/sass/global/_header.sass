@@ -48,6 +48,8 @@
     outline: none
     cursor: pointer
     color: $color-light
+    @include color-scheme(light)
+        color: $color-dark
     @include for-size(tablet-landscape-up)
         display: block
     &--close

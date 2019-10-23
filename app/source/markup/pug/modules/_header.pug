@@ -1,10 +1,11 @@
 header.header
     nav.nav.container
-        h1(data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000").nav__title ereburg
+        h1(data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000" data-aos-once="true").nav__title ereburg
         ul.nav__menu
             +navLink('index.html', 'home', pageHome, 250)
             +navLink('work.html', 'work', pageWork, 500)
             +navLink('about.html', 'about me', pageWork, 750)
             +navLink('contact.html', 'contact', pageContact, 1000)
-        button(type="button").nav__button.burger
-            span.burger__item
+        button(class="nav__button" type="button")
+            span(class="button-text") menu
+            span.dot-white .

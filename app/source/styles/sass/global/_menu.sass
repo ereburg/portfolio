@@ -1,0 +1,104 @@
+// Меню
+.nav-mobile
+    display: none
+
+.nav__button
+    padding: 5px
+    margin-left: 45px
+    display: none
+    background-color: transparent
+    border: 0
+    border-radius: 2px
+    // outline: none
+    outline-color: $color-tg
+    cursor: pointer
+    color: $color-light
+    @include color-scheme(light)
+        color: $color-dark
+    @include for-size(tablet-landscape-up)
+        display: block
+    &--close
+        position: relative
+        z-index: 100
+        // color: $color-light
+        // background: green
+
+    // &:focus
+    //     // box-shadow: 0 0 2px 1px darken($color-light, 60) 
+    //     @include color-scheme(light)
+    //         box-shadow: 0 1px 2px 1px $color-dark
+
+@include for-size(tablet-landscape-up)
+    .wrapper
+        position: relative
+        min-width: 100vw
+        min-height: 100vh
+        background: $color-dark
+    .inner
+        min-width: 100vw
+        min-height: 100vh
+        transition: all $pageTransition
+        background: $color-dark
+        color: $color-light
+        &--show
+            position: sticky
+            top: 0
+            left: 0
+            z-index: 100
+            transform: translateX(-250px) translateY($marginFromTopView)
+            border-top-right-radius: $borderTopRadius
+            box-shadow: 0 0 20px $shadow-dark, 0px 30px 50px $shadow-dark, 0px 50px 100px $shadow-dark
+                
+                
+
+    .header--mobile
+        transition: all $pageTransition
+        top: -$marginFromTopView
+
+    .nav__menu
+        display: none
+
+    .nav-mobile
+        position: fixed
+        top: 0px
+        right: -250px
+        z-index: 100
+        width: 250px
+        height: 100vh
+        // visibility: hidden
+        color: $color-light
+        text-align: right
+        transition: all 1s ease-in-out
+        // opacity: 0
+        @include color-scheme(light)
+            background: $color-dark
+            color: $color-light
+
+        &--show
+            right: 0px
+            transition: all 1s ease-in-out
+            opacity: 1
+            // visibility: visible
+            @include flexbox
+            flex-direction: column
+            justify-content: center
+            align-items: flex-end
+
+    .menu-mobile
+        list-style-type: none
+
+    .nav__item
+        margin-left: 0
+        margin-bottom: 50px 
+        font-size: $font-xl
+        @include  for-size(phone-only)
+            font-size: 6vmin
+    &:last-child
+        margin-bottom: 0
+
+    .nav-mobile__button
+        display: block
+        margin-bottom: 50px
+        font-size: $font-xl / 2
+        @include  for-size(phone-only)
+            font-size: 6vmin - 2vmin

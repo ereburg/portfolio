@@ -19,10 +19,23 @@ html(lang="en")
         link(rel="stylesheet", href="styles/aos.min.css")
         title= pageTitle
     body.page
-        include ../modules/_header
-    
-        block content
+        .wrapper
+            .inner
+                include ../modules/_header
+            
+                block content
 
-        include ../modules/_footer
+                include ../modules/_footer
+            
+            nav.nav-mobile.container
+                button(class="nav-mobile__button" type="button")
+                    span(class="button-text") close
+                    span.dot-white [x]
+                ul.menu-mobile
+                    +navLink('index.html', 'home', pageHome, 250)
+                    +navLink('work.html', 'work', pageWork, 500)
+                    +navLink('about.html', 'about me', pageWork, 750)
+                    +navLink('contact.html', 'contact', pageContact, 1000)
+
         block scripts
             script(src="scripts/scripts.min.js")

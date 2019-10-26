@@ -9,7 +9,7 @@ module.exports = function () {
             .on('error', console.error.bind(console))
             .pipe($.plugins.purgecss({
                 content: ['./app/dist/**/*.html'],
-                whitelistPatterns: [/close$/, /show$/, /mobile$/]
+                whitelistPatterns: [/close$/, /show$/, /mobile$/, /static$/]
             })) // а этот плагин удаляет ненужные селекторы, если их нет в html файлах отслеживаемой директории
             .pipe($.plugins.autoprefixer({
                 cascade: true

@@ -51,4 +51,10 @@
     @else if $color == no-preference
         @media (prefers-color-scheme: dark)
             @content
-    
+
+@mixin buttons-reset($size)
+    border: none
+    background-color: transparent
+    color: inherit
+    font-family:  inherit
+    font-size: $size

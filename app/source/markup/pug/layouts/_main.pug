@@ -27,16 +27,16 @@ html(lang="en")
 
                 include ../modules/_footer
             
-            nav.nav-mobile.container
-                .nav-mobile__wrapper
+            .nav-mobile
+                nav.nav-mobile__wrapper
                     button(class="nav-mobile__button" type="button")
                         span(class="button-text") close
-                        span.dot-white [x]
+                        span.dot-white .
                     ul.menu-mobile
-                        +navLink('index.html', 'home', pageHome, 250)
-                        +navLink('work.html', 'work', pageWork, 500)
-                        +navLink('about.html', 'about me', pageWork, 750)
-                        +navLink('contact.html', 'contact', pageContact, 1000)
+                        +navMobile('index.html', 'home', pageHome, 250)
+                        +navMobile('work.html', 'work', pageWork, 500)
+                        +navMobile('about.html', 'about me', pageWork, 750)
+                        +navMobile('contact.html', 'contact', pageContact, 1000)
 
         block scripts
             script(src="scripts/scripts.min.js")

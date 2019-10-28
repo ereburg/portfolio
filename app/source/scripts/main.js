@@ -11,35 +11,48 @@ document.addEventListener("DOMContentLoaded", function () {
 	// меню не исчезает, оно просто смещено
 	// при нажатии на кнопку происходит смещение
 
-	const pageWrapper = document.querySelector(".inner");
+	const pageMobile = document.querySelector('.page');
+	const wrapperMobile = document.querySelector('.wrapper');
+	const innerMobile = document.querySelector(".inner");
 	const headerMobile = document.querySelector('.header');
+	
 
 	// const navMenu = document.querySelector('.nav__menu');
 	const navMenuMobile = document.querySelector('.nav-mobile');
+	const navMobileWrapper = document.querySelector('.nav-mobile__wrapper');
 
 	const navButton = document.querySelector(".nav__button");
 	const navButtonMobile = document.querySelector('.nav-mobile__button');
-	const navMobileWrapper = document.querySelector('.nav-mobile__wrapper');
 
 	
 	// On click
 	navButton.addEventListener("click", function (evt) {
 		evt.preventDefault(evt);
 		if (navButton.classList.contains('nav__button--close')) {
-			pageWrapper.classList.remove('inner--show');
-			pageWrapper.classList.add('inner--static');
+
+			innerMobile.classList.remove('inner--show');
+			innerMobile.classList.add('inner--static');
+
 			navButton.classList.remove('nav__button--close');
 			// navMenu.classList.remove('nav__menu--show');
+
+			pageMobile.classList.remove('page--mobile');
+			wrapperMobile.classList.remove('wrapper--mobile');
 			headerMobile.classList.remove('header--mobile');
 			navMenuMobile.classList.remove('nav-mobile--show');
+			navMenuMobile.classList.add('visually-hidden');
 			navMobileWrapper.classList.remove('nav-mobile__wrapper--show');
+
 		} else {
-			pageWrapper.classList.add('inner--show');
-			pageWrapper.classList.remove('inner--static');
+			innerMobile.classList.add('inner--show');
+			innerMobile.classList.remove('inner--static');
 			navButton.classList.add('nav__button--close');
 			// navMenu.classList.add('nav__menu--show');
+			pageMobile.classList.add('page--mobile');
+			wrapperMobile.classList.add('wrapper--mobile');
 			headerMobile.classList.add('header--mobile');
 			navMenuMobile.classList.add('nav-mobile--show');
+			navMenuMobile.classList.remove('visually-hidden');
 			navMobileWrapper.classList.add('nav-mobile__wrapper--show');
 		}
 		
@@ -60,18 +73,24 @@ document.addEventListener("DOMContentLoaded", function () {
 	navButtonMobile.addEventListener("click", function (evt) {
 		evt.preventDefault(evt);
 		if (navButton.classList.contains('nav__button--close')) {
-			pageWrapper.classList.remove('inner--show');
-			pageWrapper.classList.add('inner--static');
+			innerMobile.classList.remove('inner--show');
+			innerMobile.classList.add('inner--static');
+
 			navButton.classList.remove('nav__button--close');
 			// navMenu.classList.remove('nav__menu--show');
+
+			pageMobile.classList.remove('page--mobile');
+			wrapperMobile.classList.remove('wrapper--mobile');
 			headerMobile.classList.remove('header--mobile');
 			navMenuMobile.classList.remove('nav-mobile--show');
 			navMobileWrapper.classList.remove('nav-mobile__wrapper--show');
 		} else {
-			pageWrapper.classList.add('inner--show');
-			pageWrapper.classList.remove('inner--static');
+			innerMobile.classList.add('inner--show');
+			innerMobile.classList.remove('inner--static');
 			navButton.classList.add('nav__button--close');
 			// navMenu.classList.add('nav__menu--show');
+			pageMobile.classList.add('page--mobile');
+			wrapperMobile.classList.add('wrapper--mobile');
 			headerMobile.classList.add('header--mobile');
 			navMenuMobile.classList.add('nav-mobile--show');
 			navMobileWrapper.classList.add('nav-mobile__wrapper--show');

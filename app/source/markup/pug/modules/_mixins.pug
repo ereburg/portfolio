@@ -1,6 +1,6 @@
 //- Header mixins
 mixin navLink(link, name, current, aosDelay)
-    li(data-aos="zoom-out-up" data-aos-delay=aosDelay data-aos-duration="1000" data-aos-once="true").nav__item
+    li(class="nav__item" data-aos="zoom-out-up" data-aos-delay=aosDelay data-aos-duration="1000" data-aos-once="true")
         if(current)
             span(tabindex = 0).nav__link.nav__link--current= name 
             span.dot-white .
@@ -31,3 +31,14 @@ mixin connectionFollow(classProp, header, aosDelay)
                     a(class="socials__link socials__link--" + `${i.name}`, href=i.link, target="_blank", rel="noopener noreferrer", data-aos="fade-up", data-aos-offset="5" data-aos-delay=aosDelay, data-aos-duration= `${i.delay}`, data-aos-once="true")
                         span(class="follow-dot follow-dot--" +`${i.name}`) .
                         = i.name
+
+//- Mobile mixins
+//- Navigation
+mixin navMobile(link, name, current, aosDelay)
+    li(class="nav-mobile__item" data-aos="zoom-out-up" data-aos-delay=aosDelay data-aos-duration="1000" data-aos-once="true")
+        if(current)
+            span(tabindex = 0).nav__link.nav__link--current= name 
+            span.dot-white .
+        else
+            a(href=link, rel="noopener noreferrer").nav__link= name
+            span.dot-white .

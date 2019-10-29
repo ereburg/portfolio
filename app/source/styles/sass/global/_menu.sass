@@ -16,46 +16,36 @@
         color: $color-dark
     @include for-size(tablet-landscape-up)
         display: block
-    &--close
-        position: relative
-        z-index: 100
 
 @include for-size(tablet-landscape-up)
 
     .page
+        transition: background-color $pageTransition
         &--mobile
             @include color-scheme(light)
-                background: linear-gradient(to top, #d1d3d6, #eaebed)
-
-    .wrapper
-        display: grid
-        grid-template-columns: 1fr
-        &--mobile
-            grid-template-columns: 1fr 250px
+                background-color: #eaebed
         
     .inner
-        transition: all $pageTransition
         position: relative
         top: 0
         left: 0
+        z-index: 10
         min-width: 100vw
         min-height: 100vh
         background: $color-dark
+        transition: all $pageTransition
         @include color-scheme(light)
             background: #fff
-        &--show
-            position: relative
-            left: -250px
-            top: $marginFromTopView
-            z-index: 100
+        &--mobile
+            z-index: 10
+            transform: translate(-250px, $marginFromTopView)
             border-top-right-radius: $borderTopRadius
             box-shadow: 0 0 20px $shadow-dark, 0px 30px 50px $shadow-dark, 0px 50px 100px $shadow-dark
             transition: all $pageTransition
             @include color-scheme(light)
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), inset -10px 0 30px #2020201a
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.274), inset -10px 0 60px rgba(44, 43, 43, 0.144)
                 
-
-    .inner--show > *
+    .inner--mobile > *
         opacity: 0.3
         filter: blur(3px)
         transition: all $pageTransition
@@ -66,17 +56,17 @@
         display: none
 
     .nav-mobile
-        // position: relative
-        // top: 0px
-        // left: 0px
-        // z-index: 90
-        // @include flexbox
-        // flex-direction: column
-        // align-items: flex-end
-        // min-width: 250px
-        // min-height: 100vh
-        // height: 100%
-        // padding-top: 40px
+        position: fixed
+        top: 0px
+        right: 0px
+        bottom: 0px
+        z-index: 9
+        @include flexbox
+        flex-direction: column
+        align-items: flex-end
+        min-width: 250px
+        opacity: 0
+        padding-top: 40px
         color: $color-light
         text-align: right
         transition: all $pageTransition
@@ -84,36 +74,13 @@
             color: $color-dark
         
         &--show
-            position: relative
-            top: 0px
-            left: 0px
-            z-index: 90
-            @include flexbox
-            flex-direction: column
-            align-items: flex-end
-            min-width: 250px
-            min-height: 100vh
-            height: 100%
-            padding-top: 40px
-            top: $marginFromTopView
-            left: -250px
-            @include color-scheme(light)
-                background: linear-gradient(to top, #d1d3d6, #eaebed)
-
-    // .nav-mobile
-    //     visibility: hidden
-    //     position: absolute
-    //     width: 1px
-    //     height: 1px
-    //     margin: -1px
-    //     border: 0
-    //     padding: 0
-    //     clip: rect (0 0 0 0)
-    //     overflow: hidden
+           transform: translateY($marginFromTopView)
+           opacity: 1
 
     .nav-mobile__wrapper
-        position: sticky
-        top: 35px
+        position: fixed
+        top: 38px
+        
         padding-right: 2vw 
         font-size: $font-xl
         @include  for-size(phone-only)
@@ -130,5 +97,10 @@
         list-style-type: none
 
     .header--mobile
+        top: -$marginFromTopView
         transition: all $pageTransition
         background: transparent
+    
+    .nav__link
+        position: relative
+        z-index: 100

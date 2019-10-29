@@ -1,0 +1,10 @@
+.container-mobile
+    nav(class="nav-mobile")
+        button(class="nav-mobile__button button" type="button")
+            span(class="button__text") close
+            span(class="button__dot") .
+        ul(class="nav-mobile__menu menu-mobile")
+            +navMobile('index.html', 'home', pageHome, 250)
+            +navMobile('work.html', 'work', pageWork, 500)
+            +navMobile('about.html', 'about me', pageWork, 750)
+            +navMobile('contact.html', 'contact', pageContact, 1000)

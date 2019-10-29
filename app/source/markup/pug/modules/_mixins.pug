@@ -35,10 +35,10 @@ mixin connectionFollow(classProp, header, aosDelay)
 //- Mobile mixins
 //- Navigation
 mixin navMobile(link, name, current, aosDelay)
-    li(class="nav-mobile__item" data-aos="zoom-out-up" data-aos-delay=aosDelay data-aos-duration="1000" data-aos-once="true")
+    li(class="menu-mobile__item" data-aos="zoom-out-up" data-aos-delay=aosDelay data-aos-duration="1000" data-aos-once="true")
         if(current)
-            span(tabindex = 0).nav__link.nav__link--current= name 
-            span.dot-white .
+            span(class="menu-mobile__link menu-mobile__link--current")= name 
+            span(class="menu-mobile__dot") .
         else
-            a(href=link, rel="noopener noreferrer").nav__link= name
-            span.dot-white .
+            a(class="menu-mobile__link" href=link, rel="noopener noreferrer")= name
+            span(class="menu-mobile__dot") .

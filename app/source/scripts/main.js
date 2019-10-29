@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const innerMobile = document.querySelector(".inner");
 	const headerMobile = document.querySelector('.header');
 	const mobileMenu = document.querySelector('.menu-mobile');
-	const menuMobile = document.querySelector('.nav-mobile');
+	const menuMobile = document.querySelector('.container-mobile');
 	// кнопки
 	const buttonMenu = document.querySelector(".nav__button");
 	const buttonClose = document.querySelector('.nav-mobile__button');
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		headerMobile.classList.toggle('header--mobile');
 	};
 	const toggleMobileNav = () => {
-		menuMobile.classList.toggle('nav-mobile--show');
+		menuMobile.classList.toggle('container-mobile--show');
 	};
 
 	// нажатие

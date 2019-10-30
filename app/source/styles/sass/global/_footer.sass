@@ -142,6 +142,24 @@
     display: block
     animation: dotHover .6s ease-in forwards
 
+.footer__copyright
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 50px
+    font-size: $fs-regular * 0.7
+    color: $color-gray
+
+.footer__link
+    margin-left: 5px
+    text-decoration: none
+    &:hover
+        color: $color-tg
+    &:not(:last-child)
+        margin-right: 20px
+        
+    
+
 @keyframes dotHover
     0%
         transform: translate(0)

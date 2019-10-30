@@ -25,23 +25,50 @@
               </li>
               <li class="nav__item" data-aos="zoom-out-up" data-aos-delay="750" data-aos-duration="1000" data-aos-once="true"><a class="nav__link" href="about.html" rel="noopener noreferrer">about me</a><span class="dot-white">.</span>
               </li>
-              <li class="nav__item" data-aos="zoom-out-up" data-aos-delay="1000" data-aos-duration="1000" data-aos-once="true"><a class="nav__link" href="contact.html" rel="noopener noreferrer">contact</a><span class="dot-white">.</span>
+              <li class="nav__item" data-aos="zoom-out-up" data-aos-delay="1000" data-aos-duration="1000" data-aos-once="true"><a class="nav__link" href="index.html#get-in-touch" rel="noopener noreferrer">contact</a><span class="dot-white">.</span>
               </li>
             </ul>
           </nav>
         </header>
         <main class="main">
           <div class="container">
-            <div class="hero">
-              <p>hello!</p>
-              <div class="box"></div>
-              <div class="box"></div>
-              <div class="box"></div>
-              <div class="box"></div>
-              <div class="box"></div>
-              <div class="box"></div>
-              <div class="box visually-hidden"></div>
-            </div>
+            <section class="hero">
+              <p>hello, world!</p>
+            </section>
+            <section class="selected"></section>
+            <section class="profile"></section>
+            <section class="contacts" id="get-in-touch">
+              <h2 class="visually-hidden">Lets get in touch!</h2>
+              <div class="contacts__content-wrapper">
+                <h3 class="contacts__title contacts__title--action">let's make something great together.</h3><a class="contacts__link contacts__link--button" href="projects.html">start a project</a><a class="contacts__link contacts__link--mail" href="mailto:eugene.kotsarev@gmail.com">ereburg@gmail.com</a>
+                <p class="contacts__address">Minsk, Republic of Belarus</p>
+              </div>
+              <div class="contacts__content-wrapper">
+                <div class="contacts__text-wrapper">
+                  <h3 class="contacts__title">say hello 👋</h3>
+                  <p class="contacts__text">
+                    And once again, greetings, my gorgeous friends of Internet! Here you can send me a message about everything you want.
+                    Feel free to contact me, especially if you have any questions, kudos or karma just text it below.
+                    Also I'd be glad to get some feedback about me and my work. Well, lets see what's on your mind. 
+                  </p>
+                </div>
+                <form class="contacts__form form-response" action="action/send.php" method="POST">
+                  <p class="form-response__row">
+                    <label class="form-response__label" for="form-response__name">name :</label>
+                    <input class="form-response__input" type="text" name="first-name" id="form-response__name" required="required"/>
+                  </p>
+                  <p class="form-response__row">
+                    <label class="form-response__label" for="form-response__email">email :</label>
+                    <input class="form-response__input" type="email" name="form-email" id="form-response__email" required="required"/>
+                  </p>
+                  <p class="form-response__row">
+                    <label class="form-response__label" for="form-response__message">message :</label>
+                    <textarea class="form-response__input form-response__input--textarea" name="form-message" id="form-response__message" required="required"></textarea>
+                  </p>
+                  <button class="form-response__button" type="submit">send the raven</button>
+                </form>
+              </div>
+            </section>
           </div>
         </main>
         <footer class="footer">
@@ -76,6 +103,7 @@
                 </ul>
               </div>
             </div>
+            <p class="footer__copyright" data-aos="fade-up" data-aos-delay="1250" data-aos-duration="1000" data-aos-once="true">© 2019 <a class="footer__link" href="index.html">Ereburg</a><a class="footer__link" href="privacy-policy.html">Privacy policy</a></p>
           </div>
         </footer>
       </div>
@@ -89,7 +117,7 @@
             </li>
             <li class="menu-mobile__item" data-aos="zoom-out-up" data-aos-delay="750" data-aos-duration="1000" data-aos-once="true"><a class="menu-mobile__link" href="about.html" rel="noopener noreferrer">about me</a><span class="menu-mobile__dot">.</span>
             </li>
-            <li class="menu-mobile__item" data-aos="zoom-out-up" data-aos-delay="1000" data-aos-duration="1000" data-aos-once="true"><a class="menu-mobile__link" href="contact.html" rel="noopener noreferrer">contact</a><span class="menu-mobile__dot">.</span>
+            <li class="menu-mobile__item" data-aos="zoom-out-up" data-aos-delay="1000" data-aos-duration="1000" data-aos-once="true"><a class="menu-mobile__link" href="index.html#get-in-touch" rel="noopener noreferrer">contact</a><span class="menu-mobile__dot">.</span>
             </li>
           </ul>
         </nav>

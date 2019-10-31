@@ -38,7 +38,15 @@
     @media (max-width: $size)  
         @content
 
-
+=border($color, $width: 1px)
+    @if $color == $color-light
+        border: $width solid $color-light
+        @include color-scheme(light)
+            border: $width solid $color-dark
+    @else if $color == $color-dark
+        border: $width solid $color-light
+        @include color-scheme(light)
+            border: $width solid $color-dark
 
 // Выбор предпочтительной темы
 @mixin color-scheme($color)
@@ -58,3 +66,13 @@
     color: inherit
     font-family:  inherit
     font-size: $size
+
+@mixin responsive-ratio($x,$y, $pseudo: false)
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    @if $pseudo
+        &:before
+            @include pseudo($pos: relative);
+            width: 100%
+            padding-top: $padding
+    @else
+        padding-top: $padding

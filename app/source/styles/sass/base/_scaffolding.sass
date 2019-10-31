@@ -19,6 +19,13 @@ a
 button
     color: inherit
     font-family: inherit
+    transition: all .3s ease
+    &:hover
+        background: $color-light
+        color: $color-dark
+        @include color-scheme(light)
+            background: $color-dark
+            color: $color-light
     &:focus
         outline-color: $color-tg
 
@@ -64,7 +71,19 @@ textarea
         color: $color-light
 
 .page::-webkit-scrollbar
-        display: none
+    display: none
+
+.main__item 
+    padding-top: 150px
+
+.button
+    padding: 20px 40px
+    color: inherit
+    text-align: center
+    background: transparent
+    border: 1px solid $color-light
+    @include color-scheme(light)
+        border: 1px solid $color-dark
 
 // Удаляем все анимации и переходы для людей, которые предпочитай их не использовать 
 @media (prefers-reduced-motion: reduce)

@@ -1,5 +1,5 @@
 .footer 
-    padding-bottom: 50px
+    padding-bottom: 100px
     
 // Призыв к сотрудничеству, первый параграф 
 .footer__attention 
@@ -34,16 +34,15 @@
         margin-right: 40px
         @include for-size(tablet-landscape-up)
             margin: 0 0 40px 0
-    
-.connection__item:last-child,
-.connection__item:nth-last-of-type(2)
-    text-align: right
-    @include for-size(tablet-landscape-up)
-        text-align: center
-    ul
-        justify-content: flex-end
+    &:last-child,
+    &:nth-last-of-type(2)
+        text-align: right
         @include for-size(tablet-landscape-up)
-            justify-content: center    
+            text-align: center
+        ul
+            justify-content: flex-end
+            @include for-size(tablet-landscape-up)
+                justify-content: center    
 
 .connection__heading
     margin-bottom: $indent-size / 2.5
@@ -158,8 +157,6 @@
     &:not(:last-child)
         margin-right: 20px
         
-    
-
 @keyframes dotHover
     0%
         transform: translate(0)

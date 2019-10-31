@@ -2,8 +2,6 @@
     display: grid
     grid-template-columns: 2fr 1fr
     column-gap: 50px
-    padding-top: 150px
-    padding-bottom: 0px
     
 .contacts__content-wrapper
     padding: 0px 0 150px
@@ -19,38 +17,28 @@
     margin-bottom: 25px
 
 .contacts__link
-    display: block
+    display: inline-block
     margin-bottom: 20px
     text-decoration: none
-    
-    &:first-of-type
-        margin: 100px auto 50px
-
-    &:last-of-type
-        margin: 0 auto 50px
 
     &--button
-        display: flex
-        justify-content: center
+        margin: 100px auto 50px
         max-width: 270px
         width: 100%
-        padding: 20px 40px
-        border: 1px solid $color-light
-        @include color-scheme(light)
-            border: 1px solid $color-dark
 
     &--mail
-        text-align: center
+        margin: 0 auto 50px
         color: $color-tg
+
+    &--credits
+        margin-bottom: 0px
 
 .contacts__address
     text-align: center
 
-.contacts__text-wrapper
-    margin-bottom: 100px
-    max-width: 750px
-
 .contacts__text
+    max-width: 750px
+    margin-bottom: 100px
     color: $color-text-for-dark
     line-height: $font-xl
     @include color-scheme(light)
@@ -90,15 +78,7 @@
         min-height: 150px
     
 .form-response__button
-    margin-top: 50px
-    padding: 20px 30px
-    background: $color-dark
-    color: $color-light 
-    border: 1px solid $color-light
-    @include color-scheme(light)
-        background: $color-light
-        color: $color-dark
-        border: 1px solid $color-dark
+    margin-top: 100px
 
 @include for-size(tablet-landscape-up)
     .contacts
@@ -117,8 +97,11 @@
         display: block
         margin-left: auto
         margin-right: auto 
-    .contacts__title
-        font-size: $font-xl * 0.94
-        &--action
-            line-height: $font-xl * 1.2
-            text-align: center
+    .title
+        font-size: $font-xl * 0.9
+        line-height: $font-xl * 1.2
+
+    .contacts__link--credits
+        display: block
+        max-width: 240px
+        +push--auto

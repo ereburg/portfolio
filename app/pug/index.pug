@@ -8,25 +8,25 @@ block content
     main.main
         .container-fluid
             section(class="hero")
-                blockquote(class="hero__quote")
+                blockquote(class="hero__quote" data-aos="zoom-in" data-aos-duration="1000")
                     p(class="text-center") If life is a box of chocolates, then I would eat it all in one sitting.
                     footer(class="text-right"): cite - Me.
                 a(href="#selected" class="arrow-down") 
                 
             article(class="main__item selected" id="selected")
                 h2(class="selected__title title") selected projects.
-                section(class="selected__section project" data-aos="fade-right" data-aos-delay="250" data-aos-duration="1000" data-aos-once="true")
+                section(class="selected__section project" data-aos="fade-right" data-aos-delay="0" data-aos-duration="1000" data-aos-once="true")
                     h3(class="title") Minimo Blog.
-                section(class="selected__section project" data-aos="fade-left" data-aos-delay="1050" data-aos-duration="1000" data-aos-once="true")
+                section(class="selected__section project" data-aos="fade-left" data-aos-delay="0" data-aos-duration="1000" data-aos-once="true")
                     h3(class="title") Agnecy Landing.
-                section(class="selected__section project" data-aos="fade-right" data-aos-delay="1550" data-aos-duration="1000" data-aos-once="true")
+                section(class="selected__section project" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000" data-aos-once="true")
                     h3(class="title") Infinite Selection.
-                section(class="selected__section project" data-aos="fade-left" data-aos-delay="2050" data-aos-duration="1000" data-aos-once="true")
+                section(class="selected__section project" data-aos="fade-left" data-aos-delay="350" data-aos-duration="1000" data-aos-once="true")
                     h3(class="title") Simple Landing.
                     
 
         .container
-            section(class="main__item profile" id="profile")
+            section(class="main__item profile" id="profile" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000" data-aos-once="true")
                 h2(class="profile__title title") about me.
                 //- p(class="regular-text").
                 //-     I am an internet enthusiast with a penchant for embracing the noob life. I love tinkering with code, and find nothing more satisfying than bringing designs to life. Offline, I like science, films, art, music, and buying books without reading them. Favourite film is Lord of the Rings. My cat Purry is obviously the most important part of my life. This might have been written by Purry.
@@ -38,7 +38,7 @@ block content
 
             article(class="main__item contacts" id="get-in-touch")
                 h2(class="visually-hidden") Lets get in touch!
-                section(class="contacts__content-wrapper contacts__content-wrapper--action")
+                section(class="contacts__content-wrapper contacts__content-wrapper--action" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000" data-aos-once="true")
                     h3(class="title title--center") let's make something great together.
                     a(class="contacts__link contacts__link--button button" href="projects.html") start a project
                     a(class="contacts__link contacts__link--phone" href="tel:+375256587530")
@@ -61,7 +61,7 @@ block content
                             label(class="form-response__label" for="form-response__message") message :
                             textarea(class="form-response__input form-response__input--textarea", name="form-message", id="form-response__message", required)
                         button(class="form-response__button button" type="submit") send the raven
-                section(class="contacts__content-wrapper credits" data-aos="fade-left" data-aos-delay="1100" data-aos-duration="1500" data-aos-once="true")
+                section(class="contacts__content-wrapper credits" data-aos="fade-up" data-aos-delay="1100" data-aos-duration="1500" data-aos-once="true")
                     h3(class="title") don't miss.
                     p(class="contacts__text").
                         Heeey, hold on a second! <br> Are you sure didn't miss anything? Yeah, that's right. There you can find out something extras about me, my projects, future plans and current statement. So what are you waiting for? Go on and visit the link below!

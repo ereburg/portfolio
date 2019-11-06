@@ -33,11 +33,7 @@
         @media (min-width: 1800px)  
             @content
 
-
-@mixin responsive($size)
-    @media (max-width: $size)  
-        @content
-
+// Цвет границы
 =border($color, $width: 1px)
     @if $color == $color-light
         border: $width solid $color-light
@@ -60,6 +56,7 @@
         @media (prefers-color-scheme: dark)
             @content
 
+// Сброс значений у кнопки
 @mixin buttons-reset($size)
     border: none
     background-color: transparent
@@ -67,6 +64,7 @@
     font-family:  inherit
     font-size: $size
 
+// Соотношение сторон, если делать обложку, например
 =responsive-ratio($x,$y, $pseudo: false)
     $padding: unquote( ( $y / $x ) * 100 + '%' );
     @if $pseudo
@@ -77,12 +75,15 @@
     @else
         padding-top: $padding
 
+// Выравнивание текста
 =align($property)
     text-align: $property
     
+// Отступы
 =padding($property)
     padding: $property
 
+// Ретина разрешение
 @mixin retina($image, $width, $height) 
     @media (min--moz-device-pixel-ratio: 1.3),
     (-o-min-device-pixel-ratio: 2.6/2),
@@ -91,3 +92,12 @@
     (min-resolution: 1.3dppx)
         background-image: url($image)
         background-size: $width $height
+
+// Фоны для проектов
+=project-bg($name)
+    .project--#{$name}
+        background: radial-gradient(circle at bottom, transparent -500%, $color-dark 90%) center no-repeat, url('../images/@2x/project-#{$name}.jpg') center no-repeat
+        background-size: cover, cover
+        +color-scheme(light)
+            background: linear-gradient(rgba(255, 255, 255, 0.986),rgba(255, 255, 255, 0.89) 100%), url('../images/@2x/project-#{$name}.jpg') center no-repeat
+            background-size: cover, cover

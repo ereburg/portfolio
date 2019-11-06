@@ -53,5 +53,5 @@ module.exports = function () {
 
   $.gulp.task('img:responsive', $.gulp.series('img-responsive-1x', 'img-responsive-2x'));
 
-  $.gulp.task('images', $.gulp.series('img-responsive-1x', 'img-responsive-2x', 'tiny', 'webp', 'sprite', 'svg:remove'));
+  $.gulp.task('images', $.gulp.series('img:responsive', 'img:compress', 'img:svg'));
 };

@@ -2,11 +2,11 @@
 mixin navLink(link, name, current, aosDelay)
     li(class="nav__item" data-aos="zoom-out-up" data-aos-delay=aosDelay data-aos-duration="750" data-aos-once="true")
         if(current)
-            span(tabindex = 0).nav__link.nav__link--current= name 
-            span.dot-white .
+            span(class="nav__link nav__link--current" tabindex = 0)= name 
+            span(class="menu__dot") .
         else
-            a(href=link, rel="noopener noreferrer").nav__link= name
-            span.dot-white .
+            a(class="nav__link" href=link, rel="noopener noreferrer")= name
+            span(class="menu__dot") .
 
 //- Footer moxins
 mixin connectionItem(classProp, header, link, tag, content, aosDelay)

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 	// AOS init
 	AOS.init({
-		offset: 50
+		offset: 0
 	});
 
 

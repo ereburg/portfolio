@@ -14,6 +14,7 @@ html
 a
     color: inherit
     font-family: inherit
+    cursor: pointer
     &:focus
         outline-color: $color-tg
         
@@ -60,6 +61,8 @@ textarea
     @include push--auto
 
 .container-fluid
+    max-width: 2080px
+    +push--auto
     padding: 0 15px
     
 // Цветовые схемы

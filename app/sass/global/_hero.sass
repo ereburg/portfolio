@@ -1,0 +1,59 @@
+.hero
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    height: calc( 100vh - 80px )
+    +padding(0 15px)
+    
+.hero__quote 
+    max-width: 750px
+    font-weight: 300
+    font-size: $font-xl
+    color: $color-text-for-dark
+    @include color-scheme(light)
+        color: $color-text-for-light
+
+    p
+        margin-bottom: 15px
+
+    +for-size(tablet-landscape-up)
+        font-size: $font-xl * 0.7
+
+    +for-size(phone-only)
+        font-size: $font-xl * 0.6
+
+    cite
+        font-size: $font-xl * 0.7
+        color: $color-light
+        +color-scheme(light)
+            color: $color-dark
+
+        +for-size(tablet-landscape-up)
+            font-size: $font-xl * 0.6
+            
+        +for-size(phone-only)
+            font-size: $font-xl * 0.5
+
+.arrow-down
+    position: absolute
+    bottom: 100px
+    width: 15px
+    height: 15px
+    border-bottom: 2px solid $color-light
+    border-right: 2px solid $color-light
+    animation: arrow-down 2s cubic-bezier(0.19, 1, 0.22, 1) infinite
+    @include color-scheme(light)
+        border-bottom: 2px solid $color-dark
+        border-right: 2px solid $color-dark
+
+@keyframes arrow-down
+    0%
+        transform: translateY(-50px) rotate(45deg)
+        opacity: 0
+    50%
+        opacity: 1
+    100%
+        transform: translateY(0px) rotate(45deg)
+        opacity: 0

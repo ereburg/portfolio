@@ -1,0 +1,77 @@
+.header
+    position: sticky
+    top: 0
+    z-index: 100
+    background: $color-dark
+    transition: all $pageTransition
+    @include color-scheme(light)
+        background: $color-light
+
+.nav
+    @include flexbox
+    align-items: baseline
+    padding-top: 20px
+
+.nav__title
+    font-size: $fs-brand
+    flex-grow: 1
+
+.nav__menu
+    @include flexbox
+    justify-content: flex-end
+    flex-grow: 2
+    text-align: right
+    list-style-type: none
+    
+.nav__item
+    position: relative
+    overflow: hidden
+    margin-left: 45px
+
+.nav__link,
+.menu-mobile__link
+    position: relative
+    z-index: 100
+    text-decoration: none
+    font-weight: 300
+    mix-blend-mode: difference
+    @include color-scheme(light)
+        font-weight: normal
+
+.menu-mobile__dot,
+.button__dot,
+.menu__dot
+    font-weight: bold
+
+.nav__link
+    +padding(5px)
+    transition: all $pageTransition
+    &::before,
+    &::after
+        +pseudo
+        z-index: -1
+        width: 120%
+        height: 120%
+        background: $color-light
+        transform: translateY(-50%)
+        transition: all $pageTransition
+        opacity: 0
+        pointer-events: none
+
+        +color-scheme(light)
+            background: $color-dark
+
+    &::after
+        transform: translate(-150%, -50%)
+    &::before
+        transform: translate(150%, -60%)
+    &:hover::after
+        transform: translate(-0%, -50%)
+        opacity: 1
+    &:hover::before
+        transform: translate(0%, -60%)
+        opacity: 1
+    &:hover
+        color: $color-dark
+        +color-scheme(light)
+            color: $color-light

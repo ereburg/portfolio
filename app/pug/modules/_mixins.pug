@@ -1,0 +1,44 @@
+//- Header mixins
+mixin navLink(link, name, current, aosDelay)
+    li(class="nav__item" data-aos="zoom-out-up" data-aos-delay=aosDelay data-aos-duration="750" data-aos-once="true")
+        if(current)
+            span(class="nav__link nav__link--current" tabindex = 0)= name 
+            span(class="menu__dot") .
+        else
+            a(class="nav__link" href=link, rel="noopener noreferrer")= name
+            span(class="menu__dot") .
+
+//- Footer moxins
+mixin connectionItem(classProp, header, link, tag, content, aosDelay)
+    div(class="connection__item " + classProp)
+        h3(class="connection__heading" data-aos="fade-up" data-aos-offset="5" data-aos-delay=aosDelay data-aos-duration="1000" data-aos-once="true")= header
+        ul: li: a(class="connection__link connection__link--" + classProp, href= link, target="_blank", rel="noopener noreferrer", data-aos="fade-up" data-aos-offset="5" data-aos-delay=aosDelay data-aos-duration="1550" data-aos-once="true")
+                    span(class="connection__tag connection__tag--" + classProp)= tag 
+                    =content
+
+mixin connectionItemMail(classProp, header, link, content, aosDelay)
+    div(class="connection__item " + classProp)
+        h3(class="connection__heading" data-aos="fade-up" data-aos-offset="5" data-aos-delay=aosDelay data-aos-duration="1000" data-aos-once="true")= header
+        ul: li: a(class="connection__link connection__link--" + classProp, href= link, target="_blank", rel="noopener noreferrer", data-aos="fade-up" data-aos-offset="5" data-aos-delay=aosDelay data-aos-duration="1550" data-aos-once="true")= content
+                    
+
+mixin connectionFollow(classProp, header, aosDelay)
+    div(class="connection__item " + classProp)
+        h3(class="connection__heading" data-aos="fade-up" data-aos-offset="5" data-aos-delay=aosDelay data-aos-duration="1000"  data-aos-once="true")= header
+        ul(class="socials")
+            for i in arrSocials
+                li
+                    a(class="socials__link socials__link--" + `${i.name}`, href=i.link, target="_blank", rel="noopener noreferrer", data-aos="fade-up", data-aos-offset="5" data-aos-delay=aosDelay, data-aos-duration= `${i.delay}`, data-aos-once="true")
+                        span(class="follow-dot follow-dot--" +`${i.name}`) .
+                        = i.name
+
+//- Mobile mixins
+//- Navigation
+mixin navMobile(link, name, current, aosDelay)
+    li(class="menu-mobile__item" data-aos="zoom-out-up" data-aos-delay=aosDelay data-aos-duration="1000" data-aos-once="true")
+        if(current)
+            span(class="menu-mobile__link menu-mobile__link--current")= name 
+            span(class="menu-mobile__dot") .
+        else
+            a(class="menu-mobile__link" href=link, rel="noopener noreferrer")= name
+            span(class="menu-mobile__dot") .

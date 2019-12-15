@@ -1,0 +1,15 @@
+- var iconFacebook = '<svg class="icon"><use xlink:href="images/sprite.svg#icon-facebook"></use></svg>'
+- var footerLinks = [{link: "#", name: 'Terms and conditions'}, {link: "#", name: 'Privacy'}] 
+- var footerSocials = [{link: "#", name: 'Facebook', icon: 'images/sprite.svg#icon-facebook'}, {link: "#", name: 'Twitter', icon: 'images/sprite.svg#icon-twitter'}, {link: "#", name: 'Instagram', icon: 'images/sprite.svg#icon-instagram'}] 
+
+footer.footer
+    .container
+        p(data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"  data-aos-once="true").footer__attention Got an interesting project? I can help you.
+        .connection
+            +connectionItem("connect", "contact with me", "http://t.me/ereburg","tg", " @ereburg", 250)
+            +connectionItem("github", "my github", "http://github.com/ereburg", "gh", " @ereburg", 450)
+            +connectionFollow("follow", "follow me", 700)
+            +connectionItemMail("hello", "say hello", "mailto:eugene.kotsarev@gmail.com", "eugene.kotsarev@gmail.com", 1000)
+        p(class="footer__copyright" data-aos="fade-up"  data-aos-delay="1250" data-aos-duration="1000"  data-aos-once="true") © 2019 
+            a(class="footer__link" href="index.html") Ereburg
+            a(class="footer__link" href="privacy-policy.html") Privacy policy

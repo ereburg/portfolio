@@ -1,0 +1,103 @@
+@mixin flexbox
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+
+// добавляет псевдоэлемент
+@mixin pseudo($display: block, $pos: absolute, $content: '')
+    content: $content
+    display: $display
+    position: $pos
+
+// выравнивание по центру
+@mixin push--auto
+    margin:
+        left: auto
+        right: auto
+
+// медиа-выражения
+@mixin for-size($size)
+    @if $size == phone-only
+        @media (max-width: 599px)  
+            @content
+    @else if $size == tablet-portrait-up
+        @media (min-width: 600px)  
+            @content
+    @else if $size == tablet-landscape-up
+        @media (max-width: 910px)  
+            @content
+    @else if $size == desktop-up
+        @media (min-width: 1200px)  
+            @content 
+    @else if $size == big-desktop-up
+        @media (min-width: 1800px)  
+            @content
+
+// Цвет границы
+=border($color, $width: 1px)
+    @if $color == $color-light
+        border: $width solid $color-light
+        +color-scheme(light)
+            border: $width solid $color-dark
+    @else if $color == $color-dark
+        border: $width solid $color-light
+        +color-scheme(light)
+            border: $width solid $color-dark
+
+// Выбор предпочтительной темы
+@mixin color-scheme($color)
+    @if $color == light
+        @media (prefers-color-scheme: light)
+            @content
+    @else if $color == dark
+        @media (prefers-color-scheme: dark)
+            @content
+    @else if $color == no-preference
+        @media (prefers-color-scheme: dark)
+            @content
+
+// Сброс значений у кнопки
+@mixin buttons-reset($size)
+    border: none
+    background-color: transparent
+    color: inherit
+    font-family:  inherit
+    font-size: $size
+
+// Соотношение сторон, если делать обложку, например
+=responsive-ratio($x,$y, $pseudo: false)
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    @if $pseudo
+        &:before
+            +pseudo($pos: relative);
+            width: 100%
+            padding-top: $padding
+    @else
+        padding-top: $padding
+
+// Выравнивание текста
+=align($property)
+    text-align: $property
+    
+// Отступы
+=padding($property)
+    padding: $property
+
+// Ретина разрешение
+@mixin retina($image, $width, $height) 
+    @media (min--moz-device-pixel-ratio: 1.3),
+    (-o-min-device-pixel-ratio: 2.6/2),
+    (-webkit-min-device-pixel-ratio: 1.3),
+    (min-device-pixel-ratio: 1.3),
+    (min-resolution: 1.3dppx)
+        background-image: url($image)
+        background-size: $width $height
+
+// Фоны для проектов
+=project-bg($name)
+    .project--#{$name}
+        background: radial-gradient(circle at bottom, transparent -500%, $color-dark 90%) center no-repeat, url('../images/@2x/project-#{$name}.jpg') center no-repeat
+        background-size: cover, cover
+        +color-scheme(light)
+            background: linear-gradient(rgba(255, 255, 255, 0.986),rgba(255, 255, 255, 0.89) 100%), url('../images/@2x/project-#{$name}.jpg') center no-repeat
+            background-size: cover, cover

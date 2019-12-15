@@ -1,0 +1,114 @@
+.container-fluid,
+.container
+    overflow-x: hidden
+    
+.selected__title
+    margin-bottom: 150px
+    text-align: center
+
+.project
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    max-width: 750px
+    margin-bottom: 100px
+    overflow: hidden
+    +padding(25px)
+    +border($color-light, 2px)
+    +align(right)
+    
+    &:nth-child(odd)
+        +align(left)
+        margin-left: auto
+
+    &:nth-child(odd) > *
+        align-self: flex-start
+        
+    +for-size(tablet-landscape-up)
+        margin: 50px auto
+        +align(center)
+        align-items: center
+
+        &:nth-child(odd)
+            +align(center)
+
+        &:nth-child(odd) > *
+            align-self: center
+
+.project__description
+    max-width: 500px
+    // mix-blend-mode: difference
+    
+// Ссылки на проект
+.project__link
+    display: inline-block
+    margin-top: 50px
+    color: $color-light
+    text-decoration: none
+    
+    +color-scheme(light)
+        color: $color-dark
+
+    transition: all $pageTransition
+    &::before,
+    &::after
+        +pseudo
+        z-index: -1
+        width: 96px
+        height: 36px
+        background: $color-light
+        transform: translateY(-50%)
+        transition: all .4s ease-in-out
+        opacity: 0
+        pointer-events: none
+        border-radius: 50%
+
+        +color-scheme(light)
+            background: $color-dark
+
+    &::after
+        transform: translate(-100%, -80%)
+    &:hover::after
+        transform: translate(-20%, -85%)
+        opacity: 1
+
+    &::before
+        transform: translate(100%, -10%)
+    &:hover::before
+        transform: translate(20%, -15%)
+        opacity: 1
+
+    &:hover
+        color: $color-dark
+        +color-scheme(light)
+            color: $color-light
+//     &::after
+//         +pseudo
+//         width: 100px
+//         height: 2px
+//         background: $color-tg
+//         transform: translateX(-100px)
+//         opacity: 0
+//         transition: all $pageTransition
+//         pointer-events: none
+//         border-radius: 50%
+
+//     &:hover::after
+//         transform: translateX(0px)
+//         opacity: 1
+//         border-radius: 5%
+
+
+// .project:nth-child(odd) .project__link
+//     &::after
+//         transform: translateX(100px)
+//     &:hover::after
+//         transform: translateX(0px)
+
+
+// Фоны проектов
+
++project-bg(minimo)
++project-bg(agnecy)
++project-bg(infinite)
++project-bg(simple)
